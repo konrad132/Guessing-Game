@@ -1,0 +1,21 @@
+import random
+# title
+print(f' Guessing Game')
+print(f' Hint : You only get 3 tries')
+
+# variables
+answer = random.randint(0,10)
+guess_count = 0
+guess_limit = 3
+
+# Guess Checker
+while guess_count < guess_limit:                                    # Set Loss Condition
+    guess = int(input( f'Guess a number from 1 to 10 '))            # Set Guess input
+    guess_count = guess_count + 1
+    if guess  == answer:                                            # Check Guess
+        print(f'!! Winner Winner Chicken Dinner !!')
+        break
+    elif guess_count < guess_limit:                                 # Notify trying again
+        print(f'Try again')
+else:                                                               # Loss
+    print(f'You Lost')
